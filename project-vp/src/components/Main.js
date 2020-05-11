@@ -31,9 +31,6 @@ class Main extends React.Component {
 
      }
 
-     componentDidUpdate() {
-          this.displayItems()
-     }
 
      onClickLoadMore = (e) => {
           e.preventDefault()
