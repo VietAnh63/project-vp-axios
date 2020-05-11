@@ -12,7 +12,8 @@ class Main extends React.Component {
                loadingState: false,
                like: [],
                sttlike: [],
-               arrview:[]
+               arrview:[],
+               cmt:[]
           }
      }
 
@@ -23,7 +24,8 @@ class Main extends React.Component {
                this.setState({
                     like: this.props.like,
                     sttlike: this.props.arrsttlike,
-                    arrview: this.props.arrview
+                    arrview: this.props.arrview,
+                    cmt: this.props.comment
                })
                //console.log(this.props.like);
                //this.props.like = arrLike
@@ -31,7 +33,10 @@ class Main extends React.Component {
 
      }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> project-vp
      onClickLoadMore = (e) => {
           e.preventDefault()
           this.loadMore()
@@ -47,14 +52,14 @@ class Main extends React.Component {
                return <div className="col-lg-4 col-md-6" key={ind} >
                     <div className="card h-100">
                          <div className="single-post post-style-1">
-                              <div className="blog-image"><img src="/images/marion-michele-330691.jpg" alt="Blog Image" /></div>
-                              <a className="avatar" href="123"><img src="/images/icons8-team-355979.jpg" alt="Profile Image" /></a>
+                              <div className="blog-image"><img src="/images/marion-michele-330691.jpg" alt="Blog" /></div>
+                              <a className="avatar" href="123"><img src="/images/icons8-team-355979.jpg" alt="Profile" /></a>
                               <div className="blog-info">
-                                   <h4 className="title" onClick={(e)=>this.increaseView(e,ind)}><NavLink to="/detail"><b>{val}</b></NavLink></h4>
+                                   <h4 className="title" onClick={(e) => this.increaseView(e, ind)}><NavLink to={"/detail/" + (ind+1)}><b>{val}</b></NavLink></h4>
                                    <ul className="post-footer">
                                         <li>{(this.state.sttlike[ind] === false) ? <a href="123" onClick={(e) => this.increaseLike(e, ind)} ><i className="ion-heart" />{this.state.like[ind]}</a> :
                                              <a href="123" onClick={(e) => this.reduceLike(e, ind)} ><i className="ion-heart" />{this.state.like[ind]}</a>}</li>
-                                        <li><a href="123"><i className="ion-chatbubble" />6</a></li>
+                                        <li><a href="123"><i className="ion-chatbubble" />{this.state.cmt[ind]}</a></li>
                                         <li><i className="ion-eye" />{this.state.arrview[ind]}</li>
                                    </ul>
                               </div>
@@ -143,7 +148,8 @@ const mapStateToProps = (state) => {
           data: state.dataAPI,
           like: state.like,
           arrsttlike: state.sttlike,
-          arrview: state.arrview
+          arrview: state.arrview,
+          comment: state.comment
      }
 }
 

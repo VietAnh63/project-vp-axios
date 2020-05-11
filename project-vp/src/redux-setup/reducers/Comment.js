@@ -1,19 +1,18 @@
 import loadData from '../../ConnectAPI'
 
-var arrLike = []
+var arrcmt = []
 loadData().then((res) => {
      var g = res.data.length
      for (var i = 0; i < g; i++) {
-          arrLike[i] = 10
+          arrcmt[i] = 1
      }
 })
 
 
-const Like = (state = arrLike, action) => {
+
+const Comment = (state = arrcmt, action) => {
      switch (action.type) {
-          case "INCREASE-LIKE":
-               return [...state,action.payload]
-          case "REDUCE-LIKE":
+          case "GET-COMMENT":
                return [...state,action.payload]
           default:
                return state
@@ -21,4 +20,4 @@ const Like = (state = arrLike, action) => {
      }
 }
 
-export default Like
+export default Comment
