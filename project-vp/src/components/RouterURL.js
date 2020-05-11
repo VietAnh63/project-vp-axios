@@ -6,7 +6,6 @@ import Detail from './Detail'
 export default class RouterURL extends Component {
      render() {
           return (
-       
                <Switch>
                     <Route path="/" exact component={Main}/>
                     <Route path="/detail" component={Detail}/>

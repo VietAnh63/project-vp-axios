@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export default function loadData ()  {
+export default function loadData () {
      return axios({
           method: 'get',
           url: 'https://jsonplaceholder.typicode.com/posts',

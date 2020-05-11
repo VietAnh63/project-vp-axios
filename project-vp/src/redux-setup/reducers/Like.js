@@ -1,11 +1,12 @@
-var arrLike = []
-//var arrsttlike = []
+import loadData from '../../ConnectAPI'
 
-for (var i = 0; i < 100; i++) {
-     arrLike[i] = 10
-     //arrsttlike[i] = false
-     //view[i] = 2
-}
+var arrLike = []
+loadData().then((res) => {
+     var g = res.data.length
+     for (var i = 0; i < g; i++) {
+          arrLike[i] = 10
+     }
+})
 
 
 const Like = (state = arrLike, action) => {
